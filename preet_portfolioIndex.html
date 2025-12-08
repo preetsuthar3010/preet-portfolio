@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Preet Suthar | Personal Portfolio</title>
+    <!-- Your original stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Boxicons for icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        /* This ensures smooth scrolling when you click the nav links */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+    <script>
+        // Wait for the DOM to be fully loaded before running the script
+document.addEventListener("DOMContentLoaded", function() {
+
+    // Get all the sections that have an ID defined
+    const sections = document.querySelectorAll('section[id]');
+    
+    // Get all navbar links
+    const navLinks = document.querySelectorAll('.header .navbar a');
+
+    // Function to run when the page is scrolled
+    const scrollActive = () => {
+        const scrollY = window.pageYOffset;
+
+        sections.forEach(current => {
+            const sectionHeight = current.offsetHeight;
+            const sectionTop = current.offsetTop - 50;
+            let sectionId = current.getAttribute('id');
+
+            // Check if the current scroll position is within the current section
+            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                // Add 'active' class to the corresponding nav link
+                document.querySelector('.header .navbar a[href*=' + sectionId + ']').classList.add('active');
+            } else {
+                // Remove 'active' class from other nav links
+                document.querySelector('.header .navbar a[href*=' + sectionId + ']').classList.remove('active');
+            }
+        });
+    };
+
+    // Add the scroll event listener to the window
+    window.addEventListener('scroll', scrollActive);
+});
+
+    </script>
+</head>
+<body>
+
+    <!-- Header & Navbar -->
+    <header class="header">
+        <a href="#home" class="logo">Preet$uthar</a>
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="Home">
+        <div class="home-content">
+            <h1>Hi, I'm Preet Suthar</h1>
+            <h3>I'm a student at A.D.I.T</h3>
+            <p>A B.Tech IT Engineering student with a passion for technology and innovation. With a strong interest in software development and problem-solving, I strive to create user-friendly and efficient solutions. My journey includes participating in the Smart India Hackathon 2024 and continuously exploring new technologies to enhance my skills.</p>
+            <div class="btn-box">
+                <a href="mailto:preetsuthar3010@gmail.com">Hire Me</a>
+                <a href="mailto:preetsuthar3010@gmail.com">Let's Talk</a>
+            </div>
+            <div class="home-sci">
+                <a href="https://www.instagram.com/preet_301005"><i class='bx bxl-instagram'></i></a>
+                <a href="https://in.linkedin.com/in/preet-suthar-808136275"><i class='bx bxl-linkedin'></i></a>
+                <a href="https://github.com/preetsuthar3010"><i class='bx bxl-github'></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="content-section">
+        <div class="section-container">
+            <h2>About Me</h2>
+            <p>I am currently a student at A.D. Patel Institute of Technology (A.D.I.T), pursuing a Bachelor's degree in Information Technology. I am passionate about building things for the web and constantly exploring new technologies to enhance my skills. My journey is driven by a desire to solve complex problems and create software that makes a difference. I thrive in collaborative environments and am always eager to learn from others.</p>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="content-section">
+         <div class="section-container">
+            <h2>My Journey</h2>
+            <div class="timeline">
+                <!-- Timeline Item -->
+                <div class="timeline-item">
+                    <p class="timeline-date">2024</p>
+                    <h3>Smart India Hackathon 2024</h3>
+                    <p>Participated as a team member in one of the world's biggest hackathons, developing innovative solutions to real-world problems. This experience sharpened my teamwork, problem-solving, and rapid prototyping skills under pressure.</p>
+                </div>
+                <!-- Timeline Item -->
+                 <div class="timeline-item">
+                    <p class="timeline-date">2022 - Present</p>
+                    <h3>B.Tech in Information Technology</h3>
+                    <p>Studying at A.D. Patel Institute of Technology, building a strong foundation in computer science fundamentals, data structures, algorithms, and software development principles.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="content-section">
+        <div class="section-container">
+            <h2>Contact Me</h2>
+             <p>Have a question or want to work together? Feel free to reach out!</p>
+            <a href="mailto=preetsuthar3010@gmail.com" class="btn-primary">Say Hello</a>
+        </div>
+    </section>
+
+</body>
+</html>

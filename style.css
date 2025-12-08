@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css?family=Tangerine');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #00497a;
+    color: #ededed;
+}
+
+/* Header Section */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 30px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Navbar */
+.navbar a {
+    font-size: 18px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: color 1s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #00abf0;
+}
+
+/* Home Section */
+.Home { /* Note: Class name in HTML is "Home" */
+    position: relative; /* Added for overlay positioning */
+    height: 100vh;
+    background: url() no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 0 10%; /* Adjusted padding for vertical centering */
+}
+
+/* This is the new overlay effect */
+.Home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 73, 122, 0.6); /* Semi-transparent overlay */
+    z-index: 1;
+}
+
+
+.home-content {
+    position: relative; /* Ensures content is above the overlay */
+    z-index: 2; /* Sits on top of the ::before pseudo-element */
+    max-width: 600px;
+}
+
+.home-content h1 {
+    font-size: 56px;
+    font-weight: 700;
+}
+
+.home-content h3 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #00abf0;
+}
+
+.home-content p {
+    font-size: 16px;
+    margin: 20px 0 40px;
+    line-height: 1.5;
+}
+
+/* Buttons */
+.home-content .btn-box {
+    display: flex;
+    justify-content: space-between;
+    width: 345px;
+    height: 50px;
+}
+
+.btn-box a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 100%;
+    background: #00abf0;
+    border: 2px solid #00abf0;
+    border-radius: 8px;
+    font-size: 19px;
+    color: #081b29;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    z-index: 1;
+    overflow: hidden;
+    transition: 1s;
+}
+
+.btn-box a:hover {
+    color: #00abf0;
+}
+
+.btn-box a:nth-child(2) {
+    background: transparent;
+    color: #00abf0;
+}
+
+.btn-box a:nth-child(2):hover {
+    color: #022f6f;
+}
+
+.btn-box a:nth-child(2)::before {
+    background: #00abf0;
+}
+
+/* Button Hover Effect */
+.btn-box a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #081b29;
+    z-index: -1;
+    transition: 1s;
+}
+
+.btn-box a:hover::before {
+    width: 100%;
+}
+
+/* Social Icons */
+.home-sci {
+    position: absolute;
+    bottom: 55px;
+    width: 170px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 2; /* Ensure icons are on top of the overlay */
+}
+
+.home-sci a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #00abf0;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #00abf0;
+    text-decoration: none;
+    z-index: 1;
+    overflow: hidden;
+    transition: 1s;
+}
+
+.home-sci a:hover {
+    color: #081b29;
+}
+
+/* Social Icons Hover Effect */
+.home-sci a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #00abf0;
+    z-index: -1;
+    transition: 1s;
+}
+
+.home-sci a:hover::before {
+    width: 100%;
+}
+
+/*
+ =================================
+ NEW STYLES FOR ADDED SECTIONS
+ =================================
+*/
+
+/* General Section Styling */
+.content-section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 10%;
+}
+
+.section-container {
+    max-width: 1000px;
+    text-align: center;
+}
+
+.content-section h2 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #00abf0;
+}
+
+.content-section p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Experience Section - Timeline */
+.timeline {
+    position: relative;
+    margin-top: 30px;
+    text-align: left;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #00abf0;
+}
+
+.timeline-item {
+    margin-bottom: 40px;
+    padding-left: 30px;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -9px;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    background: #00abf0;
+    border-radius: 50%;
+    border: 4px solid #00497a;
+}
+
+.timeline-item .timeline-date {
+    font-size: 16px;
+    color: #00abf0;
+    font-weight: 600;
+}
+
+.timeline-item h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 5px 0;
+}
+
+/* Contact Section Button */
+.btn-primary {
+    display: inline-block;
+    margin-top: 50px;
+    padding: 12px 28px;
+    background: #00abf0;
+    border: 2px solid #00abf0;
+    border-radius: 8px;
+    font-size: 19px;
+    color: #081b29;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: 0.5s;
+}
+
+.btn-primary:hover {
+    background: transparent;
+    color: #00abf0;
+}
+
